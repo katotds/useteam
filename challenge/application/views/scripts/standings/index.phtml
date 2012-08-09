@@ -1,11 +1,18 @@
 <?php
+/************
+ *
+ * file to build a json
+ *
+ *
+ *
+ */
  if(count($this->team)>0){
    echo"[\r\n";
    $cont=1;
    foreach($this->team as $row){
-   	$played=$row->getWins()+$row->getDraws()+$row->getLosses();
+    $played=$row->getWins()+$row->getDraws()+$row->getLosses();
    	echo"\t{\r\n";
-   	echo"\t\t\"place\" : \"".$cont.",\r\n";
+   	echo"\t\t\"place\" : ".$cont.",\r\n";
    	echo"\t\t\"team\" : ".utf8_encode($row->getTeam()).",\r\n";
    	echo"\t\t\"played\" : ".$played.",\r\n";
    	echo"\t\t\"wins\" : ".$row->getWins().",\r\n";

@@ -1,0 +1,51 @@
+<?php
+ //call the header
+ echo $this->render('header.phtml');
+
+ echo utf8_encode("<h1>".$this->title."</h1>");
+ //form to search by road championship
+ echo"Pesquisa por Rodada:";
+ echo $this->matchForm;
+  //form to search by team
+ echo"Pesquisa por Time:";
+ echo $this->teamForm;
+ //before the search the results
+ if(isset($this->match)){
+ 	if(isset($this->teamName))//if search by team
+ 	 echo "<h1>Partidas do:".htmlentities($this->teamName)."<h1>\r\n";
+   else //if search by round
+ 	echo "<h1>Rodada:".$this->roundName."</h1>";
+     echo utf8_encode("Número de partidas:".count($this->match)."\r\n");
+     $team= new Application_Model_Match();
+	?>
+	 <table width="600" border="1">
+	 <tr>
+	     <th>Data</th>
+	     <th>Rodada</th>
+	     <th width="120">Time<br>Mandante</th>
+	     <th>&nbsp;</th>
+	     <th>&nbsp;</th>
+	     <th>&nbsp;</th>
+	     <th width="120">Time <br>Visitante</th>
+	</tr>
+	<?php
+	    //loop to show results
+	     foreach ($this->match as $row) {
+	     	echo "<tr>\r\n" .
+	       	  	 "<td>".$team->formateDate($row['date'])."</td>\r\n" .
+	       	   	 "<td>".$row['round']."</td>\r\n" .
+	       	   	 "<td>".utf8_encode($row['home'])."</td>" .
+	       	   	 "<td>".$row['goalHomeTeam']."</td>" .
+	       	   	 "<td>X</td>\r\n" .
+	       	   	 "<td>".$row['goalVisitorTeam']."</td>" .
+	       	   	 "<td>".utf8_encode($row['visitor'])."</td>\r\n" .
+	       	   	 "</tr>\r\n";
+	     }
+	?>
+	</table>
+	<?php
+ }
+ //call the footer
+ echo "<a href=\"index\">Voltar</a>";
+ echo $this->render('footer.phtml');
+?>

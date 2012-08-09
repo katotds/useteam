@@ -1,0 +1,16 @@
+<?php
+ //call the header
+ echo $this->render('header.phtml');
+
+ echo utf8_encode("<h1>".$this->title."</h1>");
+ echo  utf8_encode("Existe na pasta do site o arquivo \"bandodedados.txt\" com informações do banco que terá o nome de \"challenge\"");
+ echo utf8_encode("Primeiro passo devera ser feio preenchendo o banco de dados clicando aqui: <a href=\"command\">Preencher</a><br/>");
+ echo utf8_encode("Segundo relizar as pesquisas do campeonato: <a href=\"search\">Pesquisar</a><br/>");
+ echo utf8_encode("Terceiro montagem do arquivo JSON: <a href=\"standings\">Montar</a><br/>");
+ echo utf8_encode("Quarto exemplo da montagem do arquivo JSON com parametros por data(to=2012-04-01&from=2012-06-01): <a href=\"standings?to=2012-04-01&from=2012-06-01\">Montar</a><br/>");
+ echo utf8_encode("Sexto modelo do banco de dados: <a href=\"".$this->baseUrl()."/public/files/modelodatabase.mwb.\">Pegar</a><br/><br/><br/>");
+ echo  utf8_encode("Obs:A tabela round tem o nome de tbmatch todos os campos pedidos estão dentro da tabela.</br>");
+ echo utf8_encode("Muito obrigado pela oportunidade de poder participar deste processo seletivo.<br/>Grato pela atenção.</br>");
+ //call the footer
+ echo $this->render('footer.phtml');
+?>

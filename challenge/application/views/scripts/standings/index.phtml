@@ -1,0 +1,22 @@
+<?php
+ if(count($this->team)>0){
+   echo"[\r\n";
+   $cont=1;
+   foreach($this->team as $row){
+   	$played=$row->getWins()+$row->getDraws()+$row->getLosses();
+   	echo"\t{\r\n";
+   	echo"\t\t\"place\" : \"".$cont.",\r\n";
+   	echo"\t\t\"team\" : ".utf8_encode($row->getTeam()).",\r\n";
+   	echo"\t\t\"played\" : ".$played.",\r\n";
+   	echo"\t\t\"wins\" : ".$row->getWins().",\r\n";
+   	echo"\t\t\"draws\" : ".$row->getDraws().",\r\n";
+   	echo"\t\t\"losses\" : ".$row->getLosses().",\r\n";
+   	echo"\t\t\"points\" : ".$row->getPoints()."\r\n";
+   	echo"\t},\r\n";
+   	$cont++;
+   }
+   echo"]\r\n";
+ }
+
+
+?>

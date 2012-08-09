@@ -1,0 +1,27 @@
+body,html {
+    margin : 0 5px;
+    font-family : Verdana,sans-serif ;
+}
+select{
+   background-color: #1E679A;
+   font-weight: bold;
+   color: #ffffff;
+   padding: 2 2 2 2px;
+}
+.optional{
+	float:left;
+	margin-top:-2px;
+}
+#pesquisar{
+	float:left;
+	margin-left:180px;
+	margin-top:-45px;
+}
+table{
+border-style: dotted;
+border-width: 1px;
+border-color: #660033;
+background-color: #cc3366;
+font-family: verdana, arial;
+font-size: 10pt;
+}

@@ -1,4 +1,10 @@
 <?php
+/**************
+ *
+ * file of search matches
+ *
+ *
+ */
  //call the header
  echo $this->render('header.phtml');
 
@@ -15,7 +21,7 @@
  	 echo "<h1>Partidas do:".htmlentities($this->teamName)."<h1>\r\n";
    else //if search by round
  	echo "<h1>Rodada:".$this->roundName."</h1>";
-     echo utf8_encode("Número de partidas:".count($this->match)."\r\n");
+     echo utf8_encode("NÃºmero de partidas:".count($this->match)."\r\n");
      $team= new Application_Model_Match();
 	?>
 	 <table width="600" border="1">
